@@ -1,7 +1,6 @@
 //Business Logic
-var array = []
 function pingpong(n) {
-  // debugger;
+  var array = []
   for (var i = 1; i <= n; i++) {
     if (!(i%15)) {
       array.push("pingpong");
@@ -16,15 +15,17 @@ function pingpong(n) {
       array.push(i);
     }
   }
-  console.log(array);
   return array;
 }
 //User Interface Logic
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
+    $("ul").empty();
     var inputText = $("#input").val();
     var result = pingpong(inputText);
-    $("#result").text(result);
+    result.forEach(function(term) {
+      $("ul").append("<li>" + term + "</li>");
+    });
   });
 });
