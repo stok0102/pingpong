@@ -1,1 +1,7 @@
-/*This file is for your custom css.  All yours*/
+html {
+  background-color: #D7B170;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
